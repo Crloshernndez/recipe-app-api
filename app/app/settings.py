@@ -29,11 +29,21 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',  
 ]
 
-PROJECT_APPS = ['core']
+PROJECT_APPS = [
+    'core',
+    'user'
+]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'rest_framework',
+    'drf_spectacular',
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
